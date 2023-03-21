@@ -9,6 +9,8 @@ class LoginStoreClass {
         this.mainSubject = new Subject();
         this.errorSubject = new Subject();
         this.observers = new Map();
+
+        this.urlBase = process.env.REACT_APP_URL_BASE_API;
     }
 
     subscribe(name, nextRef, errorRef) {
@@ -37,7 +39,7 @@ class LoginStoreClass {
         }
 
 
-        axios.post("https://localhost:7253/api/Logon",logonDTO)
+        axios.post(this.urlBase + "/Logon",logonDTO)
         .then((res)=>{
             this.login = loginRef;
             this.isConnected = true;
