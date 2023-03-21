@@ -1,7 +1,7 @@
 export default function GeneralNavigation(){
-    return (
+	return (
         <section className='le-general-navigation'>
-                <p>one</p>
+				<p>one</p>
 				<p>two</p>
 				<p>three</p>
 				<p>four</p>

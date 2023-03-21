@@ -9,6 +9,8 @@ class ProfilStoreClass {
         this.mainSubject = new Subject();
         this.errorSubject = new Subject();
         this.observers = new Map();
+
+        this.urlBase = process.env.REACT_APP_URL_BASE_API;
     }
 
     subscribe(name, nextRef, errorRef) {
@@ -37,7 +39,7 @@ class ProfilStoreClass {
         }
 
 
-        axios.post("https://localhost:7253/api/profil",dto)
+        axios.post(this.urlBase + "/profil",dto)
         .then((res)=>{
             this.mail = mailRef;
             this.mainSubject.next({mailRef: this.login});
