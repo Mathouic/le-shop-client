@@ -1,0 +1,76 @@
+
+@media all and (min-width: 1024px) {
+  html {
+      height: 100%; /*Indispensable pour que les blocs fils et petit-fils puissent profiter d'un overflow-y*/
+      font-family: sans-serif;
+    }
+  body {
+      height: 100%; /*Indispensable pour que les blocs fils et petit-fils puissent profiter d'un overflow-y*/
+      overflow: hidden;
+      margin: 0px;
+      display: flex;
+      flex-direction: column;
+      overflow-anchor: none;
+    }
+
+
+  main {
+      display: flex;
+      flex-direction: row;
+      height: 100%; /*Indispensable pour que les blocs fils et petit-fils puissent profiter d'un overflow-y*/
+    }
+
+  .le-header {
+      min-height: 50px;
+      background-color: #333;
+      color: white;
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+      padding-bottom: 10px;
+      
+      
+  }
+
+  .le-burger {
+    display: none;
+  }
+
+  .le-accueil {
+      /* min-width: 150px; */
+      flex: 0 1 auto;
+  }
+
+  .le-menu {
+      /* min-width: 400px; */
+      flex: 1 0 auto;
+      padding-left: 50px;
+  }
+
+  .le-profil-manager {
+      /* min-width: 200px; */
+      flex: 0 1 auto;
+      padding-right: 25px;
+      flex-direction: column;
+      
+  }
+
+  .le-general-navigation {
+      flex: 1 0 auto;
+      max-width: 150px;
+      overflow-y: auto;
+      margin-bottom: 60px; /*compense le header à 60px*/
+    }
+
+  .le-workspace {
+      overflow-y: auto;
+      margin-bottom: 60px; /*compense le header à 60px*/
+      flex: 1 1 auto;
+  }
+
+  .le-page-navigation {
+      max-width: 200px;
+      margin-bottom: 60px; /*compense le header à 60px*/
+      flex: 1 0 auto;
+  }
+}
