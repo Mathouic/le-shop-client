@@ -1,6 +1,8 @@
 export default function GeneralNavigation(){
+	console.log("coucçou" + process.env.REACT_APP_URL_BASE_API)
     return (
         <section className='le-general-navigation'>
+				<p>coucou <b>{process.env.REACT_APP_URL_BASE_API}</b></p>
                 <p>one</p>
 				<p>two</p>
 				<p>three</p>
