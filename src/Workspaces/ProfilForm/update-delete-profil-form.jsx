@@ -3,6 +3,7 @@ import {Form, redirect, useNavigate} from 'react-router-dom'
 import {profilStore} from '../../Store/ProfilStore/profil-store';
 import {loginStore, loginStore as store} from "../../Store/LoginStore/login-store";
 import { useEffect, useRef, useState } from 'react';
+import './update-delete-profil-form.css'
 
 // export async function action({ request, params }){
     
@@ -56,7 +57,7 @@ export default function UpdateDeleteProfilForm() {
     return (
         <Form method='post'  >
             <Container>
-                <Row>
+                <Row className='mt-3'>
                     <Col  xs={2}>
                         <BootForm.Label>Email address</BootForm.Label>
                     </Col>
@@ -65,7 +66,7 @@ export default function UpdateDeleteProfilForm() {
                     </Col>
                     <Col></Col>
                 </Row>
-                <Row>
+                <Row className='mt-3'>
                     <Col  xs={2}>
                         <BootForm.Label>Password</BootForm.Label>
                     </Col>
@@ -79,23 +80,22 @@ export default function UpdateDeleteProfilForm() {
                     </Col>
                     <Col></Col>
                 </Row>
-                <Row>
-                    <Col xs={2}>
+                <Row  className='mt-3'>
+                    <Col xs={2}></Col>
+                    <Col xs={6} className="text-end">
                         <Button  onClick={() => onDelete()}>
                             Delete
                         </Button>
-                    </Col>
-                    <Col xs={2}>
+                        &nbsp;
                         <Button  onClick={(e) => onUpdate()}>
                             Update
                         </Button>
-                    </Col>
-                    <Col xs={2}>
+                        &nbsp;
                         <Button  onClick={(e) => onClose()}>
                             Close
                         </Button>
                     </Col>
-                    <Col></Col>
+                    <Col ></Col>
                 </Row>
             </Container>
 
