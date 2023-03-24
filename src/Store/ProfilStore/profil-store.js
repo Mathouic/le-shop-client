@@ -47,11 +47,39 @@ class ProfilStoreClass {
         }).catch((err)=>{
             this.errorSubject.next({login: this.login, isConnected: this.isConnected, msg: err.message});
         })
+   }
 
-    
+   PUT({mailRef, pwdRef}) {
 
+        let dto = {
+            mail: mailRef,
+            password: pwdRef
+        }
+
+
+        axios.put("https://localhost:7253/api/profil",dto)
+        .then((res)=>{
+            this.mainSubject.next({type: 'updated', data: res.data});
+        }).catch((err)=>{
+            this.errorSubject.next({type: 'updatedError', data: err});
+        })
     }
 
+    DELETE({mailRef, pwdRef}) {
+
+        let dto = {
+            mail: mailRef,
+            password: pwdRef
+        }
+
+
+        axios.delete("https://localhost:7253/api/profil/"+ dto.mail)
+        .then((res)=>{
+            this.mainSubject.next({type: 'deleted'});           
+        }).catch((err)=>{
+            this.errorSubject.next({type: 'deletedError', data: err});
+        })
+    }
     
 }
 
